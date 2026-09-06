@@ -1,0 +1,190 @@
+    :root { 
+        --primary: #fbbf24; 
+        --primary-hover: #f59e0b;
+        --bg: #f8fafc; 
+        --white: #ffffff; 
+        --text-main: #1e293b; 
+        --text-muted: #64748b;
+        --success: #22c55e;
+        --danger: #ef4444;
+        --radius: 20px; 
+        --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05); 
+    }
+
+    /* الأساسيات */
+    body { 
+        margin: 0; 
+        font-family: 'Poppins', sans-serif; 
+        background: var(--bg); 
+        color: var(--text-main); 
+    }
+
+    .navbar { 
+            background: rgba(255, 255, 255, 0.8); 
+            backdrop-filter: blur(12px); 
+            padding: 15px 8%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        .nav-logo { 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            color: var(--primary); 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 5px; 
+        }
+        .nav-right { 
+            display: flex; 
+            gap: 20px; 
+            align-items: center; 
+        }
+        .header-avatar { 
+            width: 38px; 
+            height: 38px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 2px solid var(--primary); 
+        }
+        .profile-link { 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            color: inherit; 
+            transition: 0.2s; 
+        }
+
+    .btn-logout-simple {
+        background: none;
+        border: none;
+        color: var(--danger);
+        font-family: inherit;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 0.9rem;
+    }
+
+    /* --- تنسيقات المحتوى والـ Tabs --- */
+    .container { 
+        max-width: 1000px; 
+        margin: 40px auto; 
+        padding: 0 20px; 
+    }
+
+    .dashboard-tabs {
+        display: flex;
+        gap: 32px;
+        margin-bottom: 35px;
+        border-bottom: 2px solid #f1f5f9;
+    }
+
+    .tab-btn {
+        background: none;
+        border: none;
+        padding: 12px 5px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        color: var(--text-muted);
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .tab-btn:hover { color: var(--primary); }
+
+    .tab-btn.active {
+        color: var(--primary);
+    }
+
+    .tab-btn.active::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--primary);
+        border-radius: 10px;
+    }
+
+    /* --- بطاقات المراجعة (Review Cards) --- */
+    .page-header { margin-bottom: 30px; }
+    .page-header h2 { font-size: 1.8rem; font-weight: 700; margin: 0; }
+    .page-header p { color: var(--text-muted); margin-top: 5px; }
+
+    .review-card { 
+        background: var(--white); 
+        border-radius: var(--radius); 
+        padding: 24px; 
+        display: flex; 
+        gap: 24px; 
+        margin-bottom: 24px; 
+        box-shadow: var(--shadow); 
+        border: 1px solid rgba(0,0,0,0.02);
+        transition: transform 0.3s ease;
+    }
+
+    .review-card:hover { transform: translateY(-5px); }
+
+    .item-image-placeholder { 
+        width: 140px; height: 140px; 
+        background: #f1f5f9; 
+        border-radius: 15px; 
+        flex-shrink: 0;
+        display: flex; align-items: center; justify-content: center;
+        color: #cbd5e1; font-size: 0.8rem;
+    }
+
+    .item-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .item-info h3 { margin: 0 0 8px 0; font-size: 1.25rem; font-weight: 600; }
+    .item-info p { margin: 0; color: var(--text-muted); line-height: 1.6; }
+
+    .meta-tag {
+        display: inline-block;
+        background: #fffbeb;
+        color: #d97706;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    /* --- أزرار التحكم --- */
+    .action-area { 
+        display: flex; flex-direction: column; justify-content: center;
+        gap: 12px; border-left: 1px solid #f1f5f9; 
+        padding-left: 24px; min-width: 160px; 
+    }
+
+    .btn { 
+        padding: 12px 20px; border-radius: 12px; border: none; 
+        font-weight: 600; cursor: pointer; transition: all 0.2s;
+    }
+
+    .btn-approve { background: var(--success); color: white; }
+    .btn-approve:hover { background: #16a34a; transform: scale(1.02); }
+
+    .btn-reject { background: #fff1f2; color: var(--danger); }
+    .btn-reject:hover { background: var(--danger); color: white; transform: scale(1.02); }
+
+    .btn-delete-live { background: #fee2e2; color: var(--danger); border: 1px solid #fecaca; }
+    .btn-delete-live:hover { background: var(--danger); color: white; }
+
+    /* --- الشاشات الصغيرة --- */
+    @media (max-width: 768px) {
+        .navbar { padding: 0 5%; }
+        .nav-links { display: none; } /* يفضل إخفاء الروابط في الموبايل أو عمل منيو */
+        .review-card { flex-direction: column; }
+        .action-area { border-left: none; border-top: 1px solid #f1f5f9; padding-left: 0; padding-top: 20px; flex-direction: row; }
+        .btn { flex: 1; }
+    }
