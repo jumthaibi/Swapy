@@ -1,0 +1,79 @@
+:root { 
+            --primary: #FBC02D; 
+            --error: #ff4757; 
+            --white: #ffffff;
+        }
+        body { margin: 0; 
+            font-family: 'Poppins', sans-serif; 
+            background: #f0f2f5; 
+            overflow: hidden; 
+        }
+
+        /* Splash Screen - Exact Match from index.php[cite: 13, 14] */
+        #splash {
+            position: fixed; inset: 0; background: var(--white);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            z-index: 5000; transition: opacity 0.8s ease, visibility 0.8s; text-align: center;
+        }
+        .splash-content h1 { 
+            font-size: 6rem; font-weight: 800; color: var(--primary); 
+            margin: 0; letter-spacing: -2px;
+            animation: fadeUp 1s ease; 
+        }
+        .splash-content p { 
+            font-style: italic; font-size: 1.2rem; color: #bdc3c7; margin-top: 30px; 
+        }
+        @keyframes fadeUp { 
+            from { opacity: 0; transform: translateY(40px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        .no-splash #splash { display: none !important; }
+        .no-splash .login-container { opacity: 1 !important; }
+
+        .login-container { 
+            display: flex; justify-content: center; align-items: center; height: 100vh; 
+            opacity: 0; transition: opacity 1s ease;
+        }
+        .login-box { background: white; 
+            padding: 40px; 
+            border-radius: 25px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            width: 100%; 
+            max-width: 400px; 
+            text-align: center; }
+        .form-input { 
+            width: 100%; 
+            padding: 12px; 
+            margin: 10px 0; 
+            border: 1px solid #ddd; 
+            border-radius: 12px; 
+            box-sizing: border-box; }
+        .primary-btn { 
+            width: 100%; 
+            padding: 14px; 
+            background: var(--primary); 
+            border: none; 
+            border-radius: 12px; 
+            color: white; 
+            font-weight: 700; 
+            cursor: pointer; margin-top: 15px; 
+        }
+        .alert { 
+            padding: 10px; 
+            border-radius: 8px; 
+            margin-bottom: 15px; 
+            font-size: 14px; 
+            background: #ffeaea; 
+            color: var(--error); 
+            border: 1px solid var(--error); 
+        }
+        /* إخفاء السكرول بار مع الحفاظ على القدرة على التمرير */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* لمتصفحات Chrome, Safari, Opera */
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* لمتصفح IE and Edge */
+            scrollbar-width: none;  /* لمتصفح Firefox */
+        }
