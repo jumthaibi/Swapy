@@ -1,4 +1,4 @@
-# Swapy
+<img width="478" height="352" alt="image" src="https://github.com/user-attachments/assets/8d644dec-b6d5-408c-9cbc-2130bbc1298c" /># Swapy
 
 A PHP and MySQL item-swapping marketplace, built as a software engineering course project. Users list items they own and swap them with other users, with support staff and delivery roles built into the platform.
 
@@ -14,7 +14,11 @@ A PHP and MySQL item-swapping marketplace, built as a software engineering cours
 
 ## Screenshots
 
-<img width="1915" height="889" alt="image" src="https://github.com/user-attachments/assets/a24499ae-d988-4c82-ad52-6b6ac38d0774" />
+<img width="478" height="352" alt="image" src="https://github.com/user-attachments/assets/b00a9240-0efb-40fe-8470-36208fc63e64" />
+
+<img width="481" height="232" alt="image" src="https://github.com/user-attachments/assets/88014f16-0a97-4cb4-8c2d-35d1c089c562" />
+
+<img width="480" height="343" alt="image" src="https://github.com/user-attachments/assets/6f54597e-b174-4325-b7ed-f8e858fbef73" />
 
 
 ## Tech Stack
