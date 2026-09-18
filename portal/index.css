@@ -1,0 +1,314 @@
+:root {
+    --primary: #fbbf24;
+    --primary-dark: #f59e0b;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+    --transition: 0.2s ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 290px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--text-main);
+    font-family: 'Poppins', sans-serif;
+    background:
+        radial-gradient(circle at 10% 0%, rgba(251, 191, 36, 0.12), transparent 28rem),
+        linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+}
+
+/* Matches the customer marketplace navigation. */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px clamp(16px, 5vw, 96px);
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    backdrop-filter: blur(12px);
+}
+
+.nav-logo {
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform var(--transition);
+}
+
+.nav-logo:hover {
+    transform: translateY(-1px);
+}
+
+.nav-logo span {
+    color: var(--text-muted) !important;
+    font-size: 0.78rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+#roles-view {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 72px 0 88px;
+    text-align: center;
+}
+
+.section-header {
+    margin-bottom: 42px;
+}
+
+.section-header h2 {
+    margin: 0;
+    color: #172033;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+}
+
+.section-header p {
+    margin: 12px 0 0;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.roles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.role-card {
+    display: flex;
+    min-height: 206px;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 20px;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    flex-direction: column;
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.role-card:hover,
+.role-card:focus-visible {
+    border-color: rgba(251, 191, 36, 0.7);
+    box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
+    outline: none;
+    transform: translateY(-5px);
+}
+
+.role-card i {
+    display: grid;
+    width: 72px;
+    height: 72px;
+    place-items: center;
+    margin-bottom: 22px;
+    border-radius: 22px;
+    background: #fffbeb;
+    font-size: 2.8rem;
+    font-style: normal;
+    line-height: 1;
+    filter: drop-shadow(0 5px 12px rgba(15, 23, 42, 0.1));
+}
+
+.role-card h4 {
+    max-width: 190px;
+    margin: 0;
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .roles-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 13px 16px;
+    }
+
+    .nav-logo span {
+        display: none;
+    }
+
+    #roles-view {
+        width: min(100% - 24px, 520px);
+        padding: 48px 0 60px;
+    }
+
+    .section-header {
+        margin-bottom: 28px;
+    }
+
+    .section-header h2 {
+        font-size: 30px;
+    }
+
+    .roles-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .role-card {
+        min-height: 150px;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 18px;
+        padding: 22px 24px;
+        text-align: left;
+    }
+
+    .role-card i {
+        flex: 0 0 auto;
+        width: 58px;
+        height: 58px;
+        margin-bottom: 0;
+        border-radius: 18px;
+        font-size: 2.2rem;
+    }
+}
+
+/* Fluid sizing avoids oversized role cards on intermediate tablet widths. */
+html {
+    font-size: clamp(14px, calc(13.25px + 0.22vw), 16px);
+}
+
+.navbar {
+    padding-inline: clamp(14px, 5vw, 96px);
+    gap: clamp(10px, 2vw, 20px);
+}
+
+#roles-view {
+    width: min(1120px, calc(100% - clamp(20px, 4vw, 32px)));
+    padding-block: clamp(42px, 6vw, 72px);
+}
+
+.roles-grid {
+    gap: clamp(14px, 2vw, 24px);
+}
+
+.role-card {
+    min-height: clamp(160px, 18vw, 206px);
+    padding: clamp(18px, 2.5vw, 28px) clamp(14px, 2vw, 20px);
+    border-radius: clamp(16px, 2vw, 24px);
+}
+
+.role-card i {
+    width: clamp(58px, 6vw, 72px);
+    height: clamp(58px, 6vw, 72px);
+    margin-bottom: clamp(14px, 2vw, 22px);
+    font-size: clamp(2.1rem, 2.8vw, 2.8rem);
+}
+
+@media (max-width: 900px) {
+    #roles-view {
+        width: min(100% - 24px, 720px);
+    }
+}
+
+@media (max-width: 600px) {
+    #roles-view {
+        width: calc(100% - 16px);
+        padding-block: 36px 48px;
+    }
+
+    .section-header {
+        margin-bottom: 22px;
+    }
+
+    .section-header h2 {
+        font-size: clamp(24px, 8vw, 30px);
+    }
+
+    .role-card {
+        min-height: 116px;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .role-card i {
+        width: 50px;
+        height: 50px;
+        font-size: 1.9rem;
+    }
+}
+
+/* Compact portal cards for phones down to 290px wide. */
+@media (max-width: 600px) {
+    .navbar {
+        padding: clamp(8px, 3vw, 13px) clamp(8px, 4vw, 16px);
+    }
+
+    #roles-view {
+        width: calc(100% - clamp(16px, 6vw, 24px));
+        padding-block: clamp(24px, 9vw, 36px) clamp(32px, 12vw, 48px);
+    }
+
+    .section-header {
+        margin-bottom: clamp(14px, 5vw, 22px);
+    }
+
+    .section-header h2 {
+        font-size: clamp(22px, 8vw, 30px);
+        line-height: 1.15;
+    }
+
+    .section-header p {
+        margin-top: clamp(7px, 2.5vw, 12px);
+        font-size: clamp(11px, 3.5vw, 14px);
+    }
+
+    .roles-grid {
+        gap: clamp(8px, 3vw, 14px);
+    }
+
+    .role-card {
+        min-height: clamp(92px, 28vw, 116px);
+        gap: clamp(8px, 3vw, 12px);
+        padding: clamp(10px, 4vw, 16px);
+        border-radius: clamp(14px, 4vw, 20px);
+    }
+
+    .role-card i {
+        width: clamp(42px, 16vw, 50px);
+        height: clamp(42px, 16vw, 50px);
+        border-radius: clamp(14px, 4vw, 18px);
+        font-size: clamp(1.55rem, 7vw, 1.9rem);
+    }
+
+    .role-card h4 {
+        max-width: none;
+        font-size: clamp(11px, 4vw, 14px);
+        line-height: 1.35;
+    }
+}
