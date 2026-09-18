@@ -1,3 +1,4 @@
+## Swapy
 
 A PHP and MySQL item-swapping marketplace, built as a software engineering course project. Users list items they own and swap them with other users, with support staff and delivery roles built into the platform.
 
