@@ -14,7 +14,7 @@ A PHP and MySQL item-swapping marketplace, built as a software engineering cours
 
 ## Screenshots
 
-![Swapy screenshot]<img width="1915" height="889" alt="image" src="https://github.com/user-attachments/assets/a24499ae-d988-4c82-ad52-6b6ac38d0774" />
+<img width="1915" height="889" alt="image" src="https://github.com/user-attachments/assets/a24499ae-d988-4c82-ad52-6b6ac38d0774" />
 
 
 ## Tech Stack
